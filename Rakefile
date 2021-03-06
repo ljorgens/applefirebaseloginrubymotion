@@ -25,6 +25,7 @@ Motion::Project::App.setup do |app|
   # 2. Set your app name (this is what will show up under the icon when your app is installed).
   # ===========================================================================================
   app.name = 'applelogin'
+  app.identifier = 'com.pick6.applelogintest'
 
   # version for your app
   app.version = '1.0'
@@ -60,6 +61,7 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:portrait]
   app.info_plist['UIRequiresFullScreen'] = true
   app.info_plist['ITSAppUsesNonExemptEncryption'] = false
+  app.resources_dirs << File.join(File.dirname(__FILE__), 'googleServiceFileDevelopment')
 
   # ===========================================================================================
   # 7. To deploy to an actual device, you will need to create a developer certificate at:
