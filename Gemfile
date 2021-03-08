@@ -4,8 +4,8 @@ gem 'rake'
 gem "cocoapods", "1.8.0"
 gem "motion-cocoapods", "1.10.0"
 
-gem 'motion-firebase', path: '../motion-firebase'
-# gem 'motion-firebase', git: 'git@github.com:ljorgens/motion-firebase.git'
+# gem 'motion-firebase', path: '../motion-firebase'
+gem 'motion-firebase', git: 'git@github.com:ljorgens/motion-firebase.git'
 
 
 #POTENTIAL SOLUTIONS I HAVE TRIED

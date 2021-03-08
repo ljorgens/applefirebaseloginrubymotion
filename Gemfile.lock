@@ -1,5 +1,6 @@
-PATH
-  remote: ../motion-firebase
+GIT
+  remote: git@github.com:ljorgens/motion-firebase.git
+  revision: 4bc9f06f25e7505271ecb880102c83dc786a5590
   specs:
     motion-firebase (3.4.2)
 
