@@ -74,7 +74,7 @@ class AppViewController < UIViewController
         return
       end
 
-      idToken = NSString alloc.initWithData(appleIDCredential.identityToken, encoding:NSUTF8StringEncoding)
+      idToken = NSString.alloc.initWithData(appleIDCredential.identityToken, encoding:NSUTF8StringEncoding)
       if idToken.nil?
         NSLog("Unable to serialize id token from data: %@", appleIDCredential.identityToken)
       end
