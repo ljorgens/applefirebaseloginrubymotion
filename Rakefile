@@ -63,6 +63,17 @@ Motion::Project::App.setup do |app|
   app.info_plist['ITSAppUsesNonExemptEncryption'] = false
   app.resources_dirs << File.join(File.dirname(__FILE__), 'googleServiceFileDevelopment')
 
+  app.frameworks << 'AuthenticationServices'
+
+  # Firebase
+  app.info_plist['FirebaseAppDelegateProxyEnabled'] = false
+  app.entitlements['keychain-access-groups'] = [app.seed_id + "." + app.identifier]
+
+  # Sign In with Apple
+  app.entitlements['com.apple.developer.applesignin'] = ['Default']
+
+  app.vendor_project('vendor/FIRAppleSignInHelper', :static)
+
   # ===========================================================================================
   # 7. To deploy to an actual device, you will need to create a developer certificate at:
   #    https://developer.apple.com/account/ios/certificate/development

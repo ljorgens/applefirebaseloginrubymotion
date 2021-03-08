@@ -1,6 +1,5 @@
-GIT
-  remote: git@github.com:ljorgens/motion-firebase.git
-  revision: 4bc9f06f25e7505271ecb880102c83dc786a5590
+PATH
+  remote: ../motion-firebase
   specs:
     motion-firebase (3.4.2)
 
@@ -84,6 +83,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-darwin-20
 
 DEPENDENCIES
   cocoapods (= 1.8.0)

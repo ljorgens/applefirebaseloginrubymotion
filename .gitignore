@@ -15,3 +15,10 @@ nbproject
 .sass-cache
 .idea
 .dat*.*
+
+googleServiceFileDevelopment.plist
+GoogleService-Info.plist
+
+/provisioning
+
+/vendor/**/build-iPhoneSimulator
