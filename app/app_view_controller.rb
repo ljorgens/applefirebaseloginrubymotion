@@ -65,7 +65,7 @@ class AppViewController < UIViewController
 
   def authorizationController(controller, didCompleteWithAuthorization: authorization)
     if authorization.credential.is_a? ASAuthorizationAppleIDCredential
-      appleIDCredential = authorization.credential;
+      appleIDCredential = authorization.credential
       rawNonce = self.current_nonce
       raise "Invalid state: A login callback was received, but no login request was sent." if rawNonce.nil?
 
