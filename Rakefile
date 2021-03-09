@@ -63,11 +63,17 @@ Motion::Project::App.setup do |app|
   app.info_plist['ITSAppUsesNonExemptEncryption'] = false
   app.resources_dirs << File.join(File.dirname(__FILE__), 'googleServiceFileDevelopment')
 
+  # Development entitlements
+  app.development do
+    # This entitlement is required during development but must not be used for release.
+    app.entitlements['get-task-allow'] = true
+  end
+
   app.frameworks << 'AuthenticationServices'
 
   # Firebase
   app.info_plist['FirebaseAppDelegateProxyEnabled'] = false
-  app.entitlements['keychain-access-groups'] = [app.seed_id + "." + app.identifier]
+  # app.entitlements['keychain-access-groups'] = [app.seed_id + "." + app.identifier]
 
   # Sign In with Apple
   app.entitlements['com.apple.developer.applesignin'] = ['Default']

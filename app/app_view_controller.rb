@@ -51,7 +51,7 @@ class AppViewController < UIViewController
     authorizationController = ASAuthorizationController.alloc.initWithAuthorizationRequests requests
     authorizationController.delegate = self
     authorizationController.presentationContextProvider = self
-    authorizationController.performRequests()
+    authorizationController.performRequests
   end
 
   def setupFirebase
@@ -63,7 +63,9 @@ class AppViewController < UIViewController
     self.start_sign_in_with_apple_flow
   end
 
+  # ASAuthorizationControllerDelegate
   def authorizationController(controller, didCompleteWithAuthorization: authorization)
+    NSLog("authorization controller %@ %@", controller, authorization)
     if authorization.credential.is_a? ASAuthorizationAppleIDCredential
       appleIDCredential = authorization.credential
       rawNonce = self.current_nonce
@@ -84,6 +86,7 @@ class AppViewController < UIViewController
       Firebase.auth.signInWithCredential(credential,
                               completion: -> (authResult, error) do
         if error
+          NSLog("Sign in with Apple completed with error: %@", error)
           # Error. If error.code == FIRAuthErrorCodeMissingOrInvalidNonce,
           # make sure you're sending the SHA256-hashed nonce as a hex string
           # with your request to Apple.
