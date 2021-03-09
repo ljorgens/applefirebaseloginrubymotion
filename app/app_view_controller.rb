@@ -12,10 +12,7 @@ class AppViewController < UIViewController
     appleButton.addTarget(self, action: 'handle_signin_button_click',
       forControlEvents: UIControlEventTouchUpInside)
 
-    # puts ASAuthorizationScopeFullName
-    # puts ASAuthorizationScopeEmail
-
-    # setupFirebase
+    setupFirebase
   end
 
   def viewDidAppear(animated)
@@ -92,6 +89,7 @@ class AppViewController < UIViewController
           # with your request to Apple.
           return
         else
+          NSLog("Sign in with Apple completed successfully")
           # Sign-in succeeded
         end
       end)
